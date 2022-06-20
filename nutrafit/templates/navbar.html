@@ -1,0 +1,72 @@
+<nav class="pl-5 pr-5 navbar navbar-expand-lg  bg-white shadow sticky-top" >
+
+    <!-- Navbar brand -->
+    <a class="navbar-brand font-weight-bold" href="{% url 'index' %}" style="color: black;">NUTRAFIT</a>
+  
+    <!-- Collapse button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+      aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="basicExampleNav">
+  
+      <!-- Links -->
+      <ul class="navbar-nav mr-auto">
+          <li class="text-black nav-item">
+            <a class="nav-link font-weight-bold" href="{% url 'index' %}" style="color: black;">Home</a>
+          </li>
+          
+        </li>
+        {% if user.is_authenticated %}
+        <li class="nav-item">
+          <a class="nav-link font-weight-bold" href="{%url 'new-post'%}" style="color: black;"> NEW POST </a>
+        </li>
+        {% endif %}
+       
+        </ul>
+       
+      <!-- Links -->
+      
+      {% if user.is_authenticated %}
+          <form class="form-inline" action="{% url 'search_results' %}">
+            <div class="md-form my-1">
+              <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" name="keyword">
+            </div>
+            </form>
+          {% endif %}
+          <div class="col-sm-6 col-lg-6 d-flex justify-content-end">
+              {% if user.is_authenticated %}
+              
+              <ul>
+                <li class="dropdown list-unstyled text-black">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-4" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-user"></i> My Account </a>
+                  <ul class="dropdown-menu dropdown-default" role="menu">
+                    <li>
+                        <a class="dropdown-item" href="{%url 'profile'%}">Profile</a>
+                      </li>
+                    <li>
+                      <a class="dropdown-item" href="/accounts/password/change">Change Password</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="/logout">Logout</a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+              {% else %}
+              <li class="list-unstyled">
+                  <a class='btn btn-success font-weight-bold' href="/accounts/login">Login</a>
+                  <a class='btn btn-success font-weight-bold' href="/accounts/register">Register</a>
+              </li>
+
+              {% endif %}
+        </div>
+
+    </div>
+    <!-- Collapsible content -->
+  </nav>
+  <!--/Navbar-->
