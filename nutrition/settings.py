@@ -42,7 +42,7 @@ cloudinary.config(
 # Application definition
 
 INSTALLED_APPS = [
-    'trends',
+    'nutrafit',
     'bootstrap5',
     'cloudinary',
     'tinymce',
