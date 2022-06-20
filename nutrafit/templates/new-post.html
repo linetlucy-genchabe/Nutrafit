@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load bootstrap5 %} 
+
+{% block content%}
+
+
+    <div class="jumbotron jumbotron-fluid bg-white pb-3 pt-4 shadow" style="margin-top: 2%;">
+            
+       <h1 class="display-5 text-center font-weight-bold">Create new nutrition or fitness posts </h1>
+    
+    </div>      
+<div class="container">
+  <div class="row">
+      <!-- Empty div -->
+      <div class="col-lg-3"></div>
+
+      <div class="col-lg-6 pt-2 shadow" style=" padding-bottom:10%;margin-top: 3%;margin-bottom: 4%;">
+            <form  action="{%url 'new-post'%}" method="post" style="padding-top: 3%;">
+              {%csrf_token%}
+
+              {% bootstrap_form form%}
+              
+              <input type="submit" class="btn btn-info btn-lg font-weight-bold" value="SUBMIT">
+            </form>
+      </div>
+
+      <div class="col-lg-3"></div>
+    
+  </div>
+</div>
+{% endblock %}
