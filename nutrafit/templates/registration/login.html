@@ -1,8 +1,8 @@
 {% extends 'base.html' %}{%load bootstrap5%} {% load static %} {% block title %} Login Page {% endblock %} {% block content %}
 <div class="container mt-5 mb-3">
-    <div class="row">
-        <div class="col-md-6 shadow" style="margin-left: 22%; margin-top:6%; margin-bottom: 6%; padding-top:1%;padding-bottom:3%;">
-        <h1>Sign Into Your Account</h1>
+    <div class="row shadow">
+        <div class="col-md-5 " style="margin-left: 1%; margin-top:6%; margin-bottom: 8%; padding-top:1%;padding-bottom:3%;">
+        <h1 style="color: rgb(16, 65, 16); font-family: Verdana, Geneva, Tahoma, sans-serif;">Sign Into Your Account</h1>
         <form action="{%url 'login'%}" method="POST">
             {% csrf_token %}
             <div class="container mt-5">
@@ -15,11 +15,15 @@
                     <input type="password" class="form-control" id="password" name="password">
                 </div>
                 <br>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" style="background-color: rgb(16, 65, 16);color: white;font-weight: bold;" class="btn ">Submit</button>
             </div>
         </form>
        <p> Don't have an account? <a class=' font-weight-bold' href="/accounts/register">Register here</a>
        </p>
+        </div>
+        <div class="col-md-1"></div>
+        <div class="col-md-5">
+            <img src="/static/images/nutrafit1.jpg" alt="" style="height: 63%;width:92%; margin-top:20% ;">
         </div>
     </div>
 </div>
