@@ -1,10 +1,13 @@
 {% extends 'base.html' %} {%load bootstrap5%} {% load static %}{% block title %} Sign Up Page {% endblock %} {% block content %}
 
 <div class="container mt-5 mb-3 ">
-    <div class="row gradient-custom">
+    <div class="row gradient-custom shadow">
+        <div class="col-md-6">
+            <img src="/static/images/nutrition1.jpeg" alt="" style="height: 63%;width:92%; margin-top:20% ;">
+        </div>
         
-        <div class="col-md-6 shadow" style="margin-left: 23%;">
-        <h1>Register new Account</h1>
+        <div class="col-md-5 " style="margin-left: 1%;">
+        <h1 style="color: rgb(16, 65, 16);font-family: Arial, Helvetica, sans-serif;">Register new Account</h1>
         <form action="/register/" method="POST">
             {% csrf_token %}
             <div class="container mt-5">
@@ -33,13 +36,14 @@
                     <input type="password" class="form-control" id="password2" name="password2">
                 </div>
                 <div class="col-6 offset 3 mb-3">
-                    <button type="submit" class="btn btn-primary flex-parent jc-center">Submit</button>
+                    <button type="submit" style="background-color: rgb(16, 65, 16);color: white;font-weight: bold;" class="btn  flex-parent jc-center">Submit</button>
                 </div>
 
             </div>
         </form>
         <p>Already have an account? <a class=' font-weight-bold' href="/accounts/login">Login</a></p>
         </div>
+        
     </div>
 </div>
 
