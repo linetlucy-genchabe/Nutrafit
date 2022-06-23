@@ -74,7 +74,7 @@ This is an application where certified nutritionists and fitness coaches can upl
 
 ## live link 
 
-https://MKerubo-Nutritionist.herokuapp.com/
+https://nutrafit.herokuapp.com/
 
 ## License
 MIT license
