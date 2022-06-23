@@ -1,0 +1,14 @@
+{% extends 'base.html' %} {%load bootstrap5%}{% load static %}{% block content %}
+<div class="container shadow mt-5 mb-3" style="padding-top: 4%; padding-bottom: 6%;padding-left: 4%;">
+  <h1 style="color: green;"> Give feedback by adding a comment</h1>
+
+  <div class="form_container" style="margin-top: 4%;">
+    <form action="{%url 'comment'  post.id%}" method="post">
+      {% csrf_token %}
+      <div class="col-6 offset 3 mb-3">{{form.content}}</div>
+
+      <button type="submit" class="btn btn-success">Submit</button>
+    </form>
+  </div>
+</div>
+{% endblock %}
