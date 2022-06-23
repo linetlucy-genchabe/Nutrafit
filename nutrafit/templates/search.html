@@ -1,0 +1,45 @@
+{% extends 'base.html'%} 
+
+{% block content %}
+<div style="height: 100%;">
+  <div class="">
+    {% if posts %}
+    <div class="jumbotron jumbotron-fluid bg-white shadow">
+        <div class="">
+          <h1 class="display-6 text-center font-weight-bold" style="color: green;">Found {{ posts|length }} posts for searched term {{message}}</h1>
+        </div>
+      </div>
+    {% else %}
+    <div class="jumbotron jumbotron-fluid bg-white shadow">
+        <div class="">
+          <h1 class="display-5 text-center font-weight-bold" style="color: green;">Found 0 posts for the searched term {{message}}</h1>
+        </div>
+      </div>
+    {% endif %}
+
+  </div>
+
+  <div class="container-fluid">
+      {% if posts %}
+      <div class="container">
+        <div class="row">
+          {% for post in posts %}
+          <div class="col-md-4" style="float: left;display:flex;">
+            <div class="card" style=" margin-top: 3%;float:left; margin-left: 2%;padding-top: 1%;">
+              <img src="{{post.pic.url}}" class="card-img-top" alt="...">
+              <div class="card-body">
+        
+                <h5 class="card-title"><b>{{post.title}}</b></h5>
+                <p class="card-text">{{post.description |truncatewords:15}}</p>
+                <a href="single/post/{{post.id}}" class="btn" style="background-color: rgb(13, 77, 13); color:white;font-weight:bold;">View Details</a>
+              </div>
+            </div>
+  
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+{% endblock %}
