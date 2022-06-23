@@ -1,3 +1,4 @@
+
 <nav class="pl-5 pr-5 navbar navbar-expand-lg  bg-white shadow sticky-top" >
 
     <!-- Navbar brand -->
@@ -20,9 +21,30 @@
           
         </li>
         {% if user.is_authenticated %}
+        <ul>
+          {% for category in category_results%}
+          <ul>
+            <li class="dropdown list-unstyled text-black">
+                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-4" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-user"></i> CATEGORIES </a>
+              <ul class="dropdown-menu dropdown-default" role="menu">
+                <li>
+                    <a class="dropdown-item" href="#">nutrition</a>
+                  </li>
+                
+              </ul>
+            </li>
+          </ul>
+          {% endfor %}
+        </ul>
         <li class="nav-item">
           <a class="nav-link font-weight-bold" href="{%url 'new-post'%}" style="color: black;"> NEW POST </a>
         </li>
+        
+        
+        
+        
         {% endif %}
        
         </ul>
@@ -59,8 +81,8 @@
               </ul>
               {% else %}
               <li class="list-unstyled">
-                  <a class='btn btn-success font-weight-bold' href="/accounts/login">Login</a>
-                  <a class='btn btn-success font-weight-bold' href="/accounts/register">Register</a>
+                  <a class='btn  font-weight-bold' style="background-color:rgb(16, 65, 16);color: white; " href="/accounts/login">Login</a>
+                  <a class='btn  font-weight-bold' style="background-color:rgb(16, 65, 16);color: white; " href="/accounts/register">Register</a>
               </li>
 
               {% endif %}
