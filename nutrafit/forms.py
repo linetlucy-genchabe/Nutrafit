@@ -21,7 +21,16 @@ class CommentForm(forms.ModelForm):
 class NewPostForm(forms.ModelForm):
     class Meta:
         model = Posts
-        exclude = ['Author', 'pub_date', 'author_profile', ]
+        exclude = ['Author', 'pub_date', 'author_profile','admin_profile', ]
         widgets = {
           'post': forms.Textarea(attrs={'rows':2, 'cols':10,}),
         }
+
+class CommentForm(forms.ModelForm):
+     class Meta:
+        model = Comment
+        fields=['content']
+
+class NewsLetterForm(forms.Form):
+    your_name = forms.CharField(label='First Name',max_length=30)
+    email = forms.EmailField(label='Email')
