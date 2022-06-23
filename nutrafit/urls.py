@@ -11,7 +11,7 @@ urlpatterns = [
     url(r'logout/$',views.signout),
     url(r'^accounts/profile/$', views.user_profiles, name='profile'),
     url(r'^category/(\w+)', views.get_category,name='get_category'),
-
+    url(r'^contact/$',views.contact, name='contact'),
     url(r'^add_post_comment/(\d+)$',views.comment,name='comment'),
     url(r'^like_post/(\d+)$',views.like_post,name='like_post'),
     url(r'^new/post$', views.new_post, name='new-post'),

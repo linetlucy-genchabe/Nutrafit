@@ -39,6 +39,13 @@ def index(request):
     
     return render(request, 'index.html', {'posts':posts, 'letterform':letterform})
 
+
+
+def contact(request):
+    
+    
+    return render(request, 'contact.html')
+
 def user_login(request):
     if request.method =='POST':
         username = request.POST['username']
