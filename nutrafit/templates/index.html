@@ -2,13 +2,84 @@
 {%block content%}
 
 {% if user.is_authenticated %}
-<div class="container shadow" style="height: 36vh;margin-top:4%;background: linear-gradient(180deg, rgb(255, 255, 255), rgb(31, 107, 31));">
-  <h1  style="padding-top: 7%;padding-left:10%;color: green;">Healthy living is a priority!</h1>
+<div class="container-fluid shadow" style="height: 80vh;width:94%;margin-top:1%;background-image: url(/static/images/nutrafit1.jpg );">
+  <h1  style="padding-top: 7%;padding-left:10%;color: green;"></h1>
 </div>
 
+<div class="container_fluid">
+  <div class="container ">
+    <h1 style="color: green;margin-top: 3%;">Nutrition | Fitness | Tips </h1>
+    <hr>
+    <ul>
+      <li class="dropdown list-unstyled text-black">
+          <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-4" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false" href="/category/{{category.name}}" style="color: rgb(7, 34, 7); font-weight:bold;"> 
+          <i class=""></i> CATEGORIES </a>
+        <ul class="dropdown-menu dropdown-default" role="menu">
+          <li>
+              <a class="dropdown-item" href="/category/{{category.name}}">NUTRITION</a>
+            </li>
+          <li>
+            <a class="dropdown-item" href="/category/">FITNESS</a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="/category/">TIPS</a>
+          </li>
+        </ul>
+      </li>
+
+      
+    </ul>
+   
+    <div class="container">
+      <div class="row">
+        {% for post in posts %}
+        <div class="col-md-4" style="float: left;display:flex;">
+          <div class="card" style=" margin-top: 3%;float:left; margin-left: 2%;padding-top: 1%;">
+            <img src="{{post.pic.url}}" class="card-img-top" alt="...">
+            <div class="card-body">
+      
+              <h5 class="card-title"><b>{{post.title}}</b></h5>
+              <p class="card-text">{{post.description |truncatewords:15}}</p>
+              <a href="single/post/{{post.id}}" class="btn" style="background-color: rgb(13, 77, 13); color:white;font-weight:bold;">View Details</a>
+            </div>
+          </div>
+
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    
+    
+     
+      
+      </div>
+      <div class="container">
+
+          <div class="row" style="background-image: url(/static/images/subscribe.jpeg) ;margin-top: 3%;margin-bottom: 2%;height: 35vh;">
+
+              <div class="col-md-3"></div>
+            <!-- Looping through news end   -->
+           <div class="col-md-6" style="padding-top: 9%;">
+
+            <form action="{%url 'index'%}" method="post">
+                {%csrf_token%} {% bootstrap_form letterform layout='inline' %}
+                <input type="submit" value="Subscribe" style="background-color: green;color:white;font-weight:bold;margin-top:2%; margin-left:6%;">
+            </form>
+
+              </div>
+
+
+
+          </div>
+          </div>
+
+</div>
+
+
   {%else%}
-  <div class="container shadow" style="height: 30%;width: 100%;margin-top:4%;background: linear-gradient(180deg, rgb(255, 255, 255), rgb(47, 117, 32));">
-    <h1  style="padding-top: 20%;padding-bottom:25%;padding-left:15%;color: white;">Healthy living is a priority!</h1>
+  <div class="container-fluid shadow" style="height: 80vh;width: 100%;margin-top:1%;background-image: url(/static/images/backpic1.jpg);">
+    <h1  style="padding-top: 8%;padding-bottom:25%;padding-left:30%;color: white;">Healthy living is a priority!</h1>
   </div>
   
   
