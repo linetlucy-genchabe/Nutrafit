@@ -1,0 +1,3 @@
+Hello {{name}}
+
+Welcome to Nutrafit. We provide evidence-based, expert-written nutrition content that fits your lifestyle and preferences.
