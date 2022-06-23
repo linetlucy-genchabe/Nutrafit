@@ -1,0 +1,52 @@
+{%extends 'base.html'%}{%load bootstrap5%}{% load static %}
+{%block content%}
+
+
+<div class="container">
+    <div class="row" style="margin-top: 6%;margin-bottom: 8%;">
+      
+      <div class="col-md-8" style="float: left;display:flex;">
+        
+          <img src="{{post.pic.url}}" class="card-img-top" alt="...">
+                
+     </div>
+
+      
+      <div class="col-md-4">
+        <h2 class="card-title"><b>{{post.title}}</b></h2>
+            <p class="card-text">{{post.description }}</p>
+            <p> <b> Posted : {{post.pub_date}}</b></p>
+            <p> <b> Posted by: {{post.Admin}}</b></p>
+
+
+            <a href="{%url 'comment' post.id%}" class="btn" style="background-color: rgb(13, 77, 13); color:white;font-weight:bold;">Comment</a>
+            {% if not liked %}
+          <a href="{%url 'like_post' post.id%}" class="btn btn-success">Like</a>
+          {%else%}
+          <a href="{%url 'like_post' post.id%}" class="btn btn-danger"
+            >Unlike</a
+          >
+          {% endif %}
+
+          <p class="mt-4">Number of likes : {{likes_count}}</p>
+
+          <h3 style="color: rgb(10, 65, 10);"> <b>Post comments</b></h3> <hr>
+          <ul>
+            {% for comment in comments %}
+
+            <li>
+              {{comment.content}} 
+              <a href="{%url 'profile'  %}"
+                >{{comment.Admin}}</a
+              >
+            </li>
+
+            {% endfor %}
+          </ul>
+
+      </div>
+    
+    </div>
+  </div>
+
+  {% endblock %}
