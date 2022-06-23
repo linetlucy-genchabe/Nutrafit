@@ -32,9 +32,12 @@ class Profile(models.Model):
 
     def delete_profile(self):
         self.delete()
-    
+
     def __str__(self):
-        return f"{self.user}, {self.bio}, {self.photo}"
+        return str(self.user)
+    
+    # def __str__(self):
+    #     return f"{self.user}, {self.bio}, {self.photo}"
     
     class Meta:
         verbose_name = 'Profile'
@@ -51,26 +54,26 @@ class Posts(models.Model):
     admin_profile = models.ForeignKey(Profile,on_delete=models.CASCADE, blank=True, default='1')
     
     
-    def save_post(self):
+    def save_posts(self):
         self.save()
     
-    def delete_post(self):
+    def delete_posts(self):
         self.delete()
         
     @classmethod
     def get_allposts(cls):
-        post = cls.objects.all()
-        return post
+        posts = cls.objects.all()
+        return posts
     
     @classmethod
     def search_posts(cls, search_term):
-        post = cls.objects.filter(title__icontains=search_term)
-        return post
+        posts = cls.objects.filter(title__icontains=search_term)
+        return posts
     
     @classmethod
     def get_by_Category(cls, categories):
-        post = cls.objects.filter(category__name__icontains=categories)
-        return post
+        posts = cls.objects.filter(category__name__icontains=categories)
+        return posts
     
     @classmethod
     def get_posts(request, id):
@@ -105,8 +108,14 @@ class Comment(models.Model):
         def delete_comment(self):
             self.delete()
 
+class Likes(models.Model):
+    created_at = models.DateTimeField(auto_now_add=True)
+    user_id= models.ForeignKey(User,on_delete=models.CASCADE)
+    post_id= models.ForeignKey(Posts,on_delete=models.CASCADE)
 
-
+class NewsLetterRecipients(models.Model):
+    name = models.CharField(max_length = 30)
+    email = models.EmailField()
        
 
 	    
