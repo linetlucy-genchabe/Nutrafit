@@ -94,8 +94,8 @@ DATABASES = {
     'default': {
     'ENGINE': 'django.db.backends.postgresql',
     'NAME': 'nutrafitdb',
-    'USER': 'lynne',
-    'PASSWORD':'lynne2022',
+    'USER': 'postgres',
+    'PASSWORD':'lynne',
     }
 }
 

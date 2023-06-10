@@ -1,10 +1,15 @@
 {%extends 'base.html'%}{%load bootstrap5%}{% load static %}
 {%block content%}
 
-{% if user.is_authenticated %}
-<div class="container shadow" style="height: 50vh;width:94%;margin-top:3%;background-image: url(/static/images/nutrition3.jpg );">
+
+<!-- <div class="container shadow" style="height: 50vh;width:94%;margin-top:3%;background-image: url(/static/images/nutrition3.jpg );">
   <h1  style="padding-top: 7%;padding-left:10%;color: green;"></h1>
-</div>
+</div> -->
+
+ <div class="container-fluid shadow" style="height: 80vh;width: 100%;margin-top:1%;background-image: url(/static/images/backpic1.jpg);">
+    <h1  style="padding-top: 8%;padding-bottom:25%;padding-left:30%;color: white;">Healthy living is a priority!</h1>
+  </div>
+   
 
 <div class="container_fluid">
   <div class="container ">
@@ -77,13 +82,13 @@
 </div>
 
 
-  {%else%}
-  <div class="container-fluid shadow" style="height: 80vh;width: 100%;margin-top:1%;background-image: url(/static/images/backpic1.jpg);">
+ 
+  <!-- <div class="container-fluid shadow" style="height: 80vh;width: 100%;margin-top:1%;background-image: url(/static/images/backpic1.jpg);">
     <h1  style="padding-top: 8%;padding-bottom:25%;padding-left:30%;color: white;">Healthy living is a priority!</h1>
   </div>
+   -->
   
-  
-{%endif%}
+
 
 
 
