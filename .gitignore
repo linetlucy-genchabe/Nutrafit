@@ -1,5 +1,7 @@
 virtual/
 *.pyc
 .env
+.install
+install/
 install/
 .install
