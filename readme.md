@@ -13,7 +13,7 @@ This is an application where certified nutritionists and fitness coaches can upl
 * Users can Set up a profile about them 
 
 * Users Find  different posts about nutrition and fitness.
-*  Users can click view details of a single post.
+* Users can click view details of a single post.
 
 * Users can search for a specific post.
 
