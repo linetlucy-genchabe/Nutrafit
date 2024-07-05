@@ -11,7 +11,6 @@ This is an application where certified nutritionists and fitness coaches can upl
 * Users need to Sign in to the application to start using it
 
 * Users can Set up a profile about them 
-
 * Users Find  different posts about nutrition and fitness.
 * Users can click view details of a single post.
 
