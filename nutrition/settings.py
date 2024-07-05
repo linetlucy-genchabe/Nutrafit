@@ -96,7 +96,7 @@ DATABASES = {
     'NAME': 'Nutrafitdb',
     'USER': 'postgres',
     'PASSWORD':'lynne',
-    'PORT':'8080',
+    
     }
 }
 
@@ -104,11 +104,11 @@ DATABASES = {
 # Email configurations remember to install python-decouple
 
 
-EMAIL_USE_TLS=True
-EMAIL_HOST='smtp.gmail.com'
-EMAIL_PORT=587
-EMAIL_HOST_USER='linetlucy21@gmail.com'
-EMAIL_HOST_PASSWORD='Linet.2211'
+# EMAIL_USE_TLS=True
+# EMAIL_HOST='smtp.gmail.com'
+# EMAIL_PORT=587
+# EMAIL_HOST_USER='linetlucy21@gmail.com'
+# EMAIL_HOST_PASSWORD='Linet.2211'
 
 
 # Password validation
