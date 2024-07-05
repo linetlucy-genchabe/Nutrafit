@@ -96,7 +96,6 @@ DATABASES = {
     'NAME': 'Nutrafitdb',
     'USER': 'postgres',
     'PASSWORD':'lynne',
-    'HOST':'*',
     
     }
 }
