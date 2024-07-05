@@ -28,7 +28,6 @@ class Profile(models.Model):
     def save_profile(self):
         self.save()
         
-        
 
     def delete_profile(self):
         self.delete()
@@ -36,8 +35,8 @@ class Profile(models.Model):
     def __str__(self):
         return str(self.user)
     
-    # def __str__(self):
-    #     return f"{self.user}, {self.bio}, {self.photo}"
+    def __str__(self):
+        return f"{self.user}, {self.bio}, {self.photo}"
     
     class Meta:
         verbose_name = 'Profile'

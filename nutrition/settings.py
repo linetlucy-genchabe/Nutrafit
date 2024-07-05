@@ -93,10 +93,10 @@ WSGI_APPLICATION = 'nutrition.wsgi.application'
 DATABASES = {
     'default': {
     'ENGINE': 'django.db.backends.postgresql',
-    'NAME': 'nutrafitdb',
+    'NAME': 'Nutrafitdb',
     'USER': 'postgres',
     'PASSWORD':'lynne',
-    'PORT':'5433',
+    
     
     }
 }
