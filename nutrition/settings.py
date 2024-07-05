@@ -96,7 +96,7 @@ DATABASES = {
     'NAME': 'nutrafitdb',
     'USER': 'postgres',
     'PASSWORD':'lynne',
-    'PORT': '*',
+    
     }
 }
 
